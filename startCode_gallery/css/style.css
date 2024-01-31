@@ -119,15 +119,54 @@ main {
 .button--center {position: relative; transform: translate(-50%, 0%); left: 50%; margin-top: 1rem;}
 
 /*GALERIE*/
+.gallery {
+    display: grid;
+    overflow-x: scroll;
+    grid-template-columns: repeat(6, 1fr);
+    
+    
+}
+.gallery  img{
+    width: 100%;
+    height: auto;
+}
 
 
 
 
 @media (min-width: 700px) {
-    
+    .gallery{
+        display: grid;
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        gap: .5em;
+        overflow-x: visible;
+    }
+    .gItem--3, .gItem--6{
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
 }
 @media (min-width: 1200px) {
- 
+    .gallery{
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        gap: .5em;
+        overflow-x: visible;
+        grid-auto-flow: row dense;
+
+    }
+    .gItem--3, .gItem--6{
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .gItem--2{
+        grid-column: 1 / span 2;
+        grid-row: 2/span 2;
+    }
 }
 .gallery__buttons {
     transform: translate(-50%, 0%); 
